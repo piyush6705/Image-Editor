@@ -14,19 +14,29 @@ const filters = {
 const presets = {
   original:  { brightness: 100, contrast: 100, exposure: 100, saturation: 100, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
   vintage:   { brightness: 110, contrast: 120, exposure: 100, saturation: 80,  hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 50, opacity: 100, invert: 0 },
-  cold:      { brightness: 105, contrast: 100, exposure: 100, saturation: 70,  hueRotate: 180, blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
-  warm:      { brightness: 110, contrast: 100, exposure: 100, saturation: 140, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 30, opacity: 100, invert: 0 },
-  dramatic:  { brightness: 80,  contrast: 150, exposure: 100, saturation: 130, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
-  dark:      { brightness: 60,  contrast: 130, exposure: 100, saturation: 100, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
+  cold: { brightness: 105, contrast: 100, exposure: 100, saturation: 70,  hueRotate: 180, blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
+  warm: { brightness: 110, contrast: 100, exposure: 100, saturation: 140, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 30, opacity: 100, invert: 0 },
+  dramatic: { brightness: 80,  contrast: 150, exposure: 100, saturation: 130, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
+  dark:{ brightness: 60,  contrast: 130, exposure: 100, saturation: 100, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
 };
-const imageCanvas      = document.getElementById('image-canvas');
-const ctx              = imageCanvas.getContext('2d');
-const imgInput         = document.getElementById('image-input');
+
+
+const imageCanvas = document.getElementById('image-canvas');
+
+const ctx = imageCanvas.getContext('2d');
+
+const imgInput = document.getElementById('image-input');
+
 const filtersContainer = document.querySelector('.filters');
-const resetBtn         = document.getElementById('reset-btn');
-const downloadBtn      = document.getElementById('download-btn');
-const placeholder      = document.querySelector('.placeholder');
-const presetBtns       = document.querySelectorAll('.preset-btn');
+
+const resetBtn = document.getElementById('reset-btn');
+
+const downloadBtn = document.getElementById('download-btn');
+
+const placeholder = document.querySelector('.placeholder');
+
+const presetBtns = document.querySelectorAll('.preset-btn');
+
 let originalImage = null;
 
 
@@ -37,10 +47,10 @@ function createFilterElement(key, filter) {
   label.setAttribute('for', key);
   label.textContent = filter.label;
   const input = document.createElement('input');
-  input.type  = 'range';
-  input.id    = key;
-  input.min   = filter.min;
-  input.max   = filter.max;
+  input.type = 'range';
+  input.id = key;
+  input.min = filter.min;
+  input.max = filter.max;
   input.value = filter.value;
 
     input.addEventListener('input', (e) => {
@@ -111,11 +121,11 @@ imgInput.addEventListener('change', (e) => {
   img.src = URL.createObjectURL(file);
   img.onload = () => {
     originalImage = img;
-    imageCanvas.width  = img.width;
+    imageCanvas.width = img.width;
     imageCanvas.height = img.height;
     
-    placeholder.style.display    = 'none';
-    imageCanvas.style.display    = 'block';
+    placeholder.style.display = 'none';
+    imageCanvas.style.display = 'block';
     resetFilters();          
     URL.revokeObjectURL(img.src);
   };
@@ -130,9 +140,9 @@ downloadBtn.addEventListener('click', () => {
   if (!originalImage) return;
   
   applyFilters();
-  const link   = document.createElement('a');
+  const link  = document.createElement('a');
   link.download = 'edited-image.png';
-  link.href     = imageCanvas.toDataURL('image/png');
+  link.href  = imageCanvas.toDataURL('image/png');
   link.click();
 });
 
