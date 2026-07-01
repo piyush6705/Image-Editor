@@ -59,3 +59,7 @@ main section .left{
   align-items: column;
   gap:var(--gutter-lg);
 }
+
+main section .bottom{
+  background-color:red;
+}
