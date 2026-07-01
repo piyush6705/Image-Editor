@@ -11,6 +11,7 @@ const filters = {
   invert: { label: 'Invert', value: 0, min: 0, max: 100, unit: '%' }
 };
 
+
 const presets = {
   original:  { brightness: 100, contrast: 100, exposure: 100, saturation: 100, hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 0,  opacity: 100, invert: 0 },
   vintage:   { brightness: 110, contrast: 120, exposure: 100, saturation: 80,  hueRotate: 0,   blur: 0, grayscale: 0,  sepia: 50, opacity: 100, invert: 0 },
