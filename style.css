@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  
+
+  
+}
+
+html{
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+}
+
+main{
+  width: 100%;
+  
+}
+main section{
+  width: 100%;
+  padding: var(--padding-xxl);
+}
+
+.btn{
+  padding: var(--padding-sm) var(--padding-lg);
+  border:none;
+  outline:none;
+  border-radius:var(--border-radius-md);
+  background-color:var(--bg-active-color);
+  cursor:pointer;
+  
+}
+
+main section .top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:var(--gutter-md);
+}
+
+#reset-btn{
+  background-color:var(--bg-danger-color);
+  color:var(--text-primary-color);
+}
+
+#download-btn{
+  background-color:var(--bg-success-color);
+  color:var(--text-primary-color);
+}
+
+main section .left{
+  display: flex;
+  align-items: column;
+  gap:var(--gutter-lg);
+}

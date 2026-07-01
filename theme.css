@@ -1,7 +1,9 @@
 :root{
   --bg-primary-color:rgb(17,17,17);
   --bg-secondary-color:rgb(34,34,34);
-  --bg-active-color:rgb(255, 0, 0);
+  --bg-active-color:rgb(104, 101, 101);
+  --bg-danger-color:rgb(255, 0, 0);
+  --bg-success-color:rgb(50, 200, 50);
 
   --text-primary-color:rgb(228, 216, 216);
   --text-secondary-color:rgb(200,200,200);
