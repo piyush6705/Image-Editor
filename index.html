@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image editor</title>
+  <title>Image Editor</title>
   <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-  rel="stylesheet"
-/>
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,24 +16,79 @@
     <section>
       <div class="left">
         <div class="top">
-          <label for="image-input" class="btn">
-            Choose Image
+          <label for="image-input" class="btn" id="choose-btn">
+            Choose image
             <input type="file" accept="image/*" id="image-input" hidden>
           </label>
           <button class="btn" id="reset-btn">Reset</button>
-          <button class="btn" id="download-btn">Save</button>
-
+          <button class="btn" id="download-btn">Download image</button>
         </div>
         <div class="bottom">
-          <div class="placeholder">
-            <i class="ri-image-line"></i>
-            <p>No image selected</p>
+          <div class="image-container">
+            <div class="placeholder">
+              <i class="ri-image-line"></i>
+              <p>Image not selected</p>
+            </div>
+           
           </div>
         </div>
       </div>
-      <div class="right"></div>
+      <div class="right">
+        <div class="filters">
+          <div class="filter-group">
+            <label for="brightness">Brightness</label>
+            <input type="range" id="brightness" min="0" max="200" value="100">
+          </div>
+          <div class="filter-group">
+            <label for="contrast">Contrast</label>
+            <input type="range" id="contrast" min="0" max="200" value="100">
+          </div>
+          <div class="filter-group">
+            <label for="exposure">Exposure</label>
+            <input type="range" id="exposure" min="0" max="200" value="100">
+          </div>
+          <div class="filter-group">
+            <label for="saturation">Saturation</label>
+            <input type="range" id="saturation" min="0" max="200" value="100">
+          </div>
+          <div class="filter-group">
+            <label for="hue-rotate">Hue Rotate</label>
+            <input type="range" id="hue-rotate" min="0" max="360" value="0">
+          </div>
+          <div class="filter-group">
+            <label for="blur">Blur</label>
+            <input type="range" id="blur" min="0" max="20" value="0">
+          </div>
+          <div class="filter-group">
+            <label for="grayscale">Grayscale</label>
+            <input type="range" id="grayscale" min="0" max="100" value="0">
+          </div>
+          <div class="filter-group">
+            <label for="sepia">Sepia</label>
+            <input type="range" id="sepia" min="0" max="100" value="0">
+          </div>
+          <div class="filter-group">
+            <label for="opacity">Opacity</label>
+            <input type="range" id="opacity" min="0" max="100" value="100">
+          </div>
+          <div class="filter-group">
+            <label for="invert">Invert</label>
+            <input type="range" id="invert" min="0" max="100" value="0">
+          </div>
+        </div>
+        <div class="presets">
+          <h3>Preset Filters</h3>
+          <div class="preset-buttons">
+            <button class="preset-btn active" data-filter="original">Original</button>
+            <button class="preset-btn" data-filter="vintage">Vintage</button>
+            <button class="preset-btn" data-filter="cold">Cold</button>
+            <button class="preset-btn" data-filter="warm">Warm</button>
+            <button class="preset-btn" data-filter="dramatic">Dramatic</button>
+            <button class="preset-btn" data-filter="dark">Dark</button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-
 </body>
 </html>
