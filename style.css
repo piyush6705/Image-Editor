@@ -48,7 +48,11 @@ main section {
 }
 .btn:hover {
   opacity: 0.85;
+  
+  outline: 2px solid var(--text-primary-color);
+  outline-offset: 2px;
 }
+
 #choose-btn {
   background-color: var(--bg-secondary-color);
   border: 1px solid var(--border-color);
@@ -133,12 +137,12 @@ main section {
   flex-direction: column;
   gap: var(--gutter-sm);
 }
-.filter-group {
+.filter {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
-.filter-group label {
+.filter label {
   font-size: var(--font-size-sm);
   color: var(--text-secondary-color);
   font-weight: 500;
@@ -218,11 +222,10 @@ input[type="range"]::-moz-range-thumb {
 .preset-btn:hover {
   opacity: 0.85;
   transform: translateY(-1px);
-}
-.preset-btn.active {
   outline: 2px solid var(--text-primary-color);
   outline-offset: 2px;
 }
+
 
 @media (max-width: 768px) {
   main section {
