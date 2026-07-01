@@ -11,6 +11,10 @@ const filters = {
   invert: { value: 0, min: 0, max: 100, unit: '%' }
 };
 
+const imageCanvas = document.getElementById('image-canvas');
+const imgInput = document.querySelector('#image-input');
+const canvasCtx = imageCanvas.getContext('2d');
+
 const filtersContainer = document.querySelector('.filters');
 
 
@@ -43,4 +47,21 @@ Object.keys(filters).forEach(key =>{
     filters[key].max);
   
   filtersContainer.appendChild(filterElement);
+})
+
+
+imgInput.addEventListener('change', (event) => {
+  
+  const file = event.target.files[0];
+  const imagePlaceholder = document.querySelector('.placeholder');
+  imagePlaceholder.style.display = 'none';
+  
+  const img = new Image();
+  img.src = URL.createObjectURL(file);
+
+  img.onload = () => {
+    imageCanvas.width = img.width;
+    imageCanvas.height = img.height;
+    canvasCtx.drawImage(img, 0, 0);
+  }
 })
